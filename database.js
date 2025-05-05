@@ -13,6 +13,8 @@ export async function showBus(city) {
     `SELECT Bus_name,start_point,end_point FROM bus_details WHERE City = ?`,
     [city]
   );
+  console.log(result[0]);
+  
   return result[0];
 }
 export async function showCity() {
