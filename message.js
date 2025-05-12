@@ -81,7 +81,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('liveLocation', ({ bus, latitude, longitude }) => {
-    console.log(`Latitude: ${latitude}, Longitude: ${longitude}, Bus: ${bus}`);
+    console.log(` Send to Map Screen >>> Latitude: ${latitude}, Longitude: ${longitude}, Bus: ${bus}`);
     socket.broadcast.emit('receiveLive', { latitude, longitude });
     if (buses[bus]) {
       io.to(bus).emit('coords', {
