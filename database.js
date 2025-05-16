@@ -2,9 +2,9 @@ import mysql from "mysql2";
 const pool = mysql
   .createPool({
     host: 'sql12.freesqldatabase.com',
-    user: 'sql12777129',
-    password: 'T7LgQdnLiy',  // Use the correct password for the user
-    database: 'sql12777129',
+    user: 'sql12779144',
+    password: 'XAKwU5jH6N',  // Use the correct password for the user
+    database: 'sql12779144',
   })
   .promise();
 const city = "Thanjavur";
