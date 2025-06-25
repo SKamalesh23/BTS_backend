@@ -76,17 +76,16 @@ io.on('connection', (socket) => {
     console.log(`${socket.id} joined bus room: ${bus}`);
   });
 
-  socket.on('clientConnect', ({bus}) => {
-      
-  });
 
-  socket.on('liveLocation', ({ bus, latitude, longitude }) => {
+
+  socket.on('liveLocation', ({ bus, latitude, longitude,seat}) => {
  
-    console.log(` Send to Map Screen >>> Latitude: ${latitude}, Longitude: ${longitude}, Bus: ${bus}`);
+    console.log(` Send to Map Screen >>> Latitude: ${latitude}, Longitude: ${longitude}, Bus: ${bus}, seat: ${seat}`);
     if (buses[bus]) {
       io.to(bus).emit('coords', {
         latitude,
         longitude,
+        seat
       });
     }
   });
